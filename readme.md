@@ -68,6 +68,39 @@ Finally, it will ask you to input a string path to an image and make a predictio
 ## 2. Text Generation with Recurrent Neural Network
 ----
 
+Given a body of text, train a LSTM network to be able to predict the next letter in a sequence. We can do this recursively to auto-generate entirely new text. The fun part is, the model's output is completely flavored by what you put in. Simpson comics? Your favorite book? The bible? Even software source code - the network will write in that style.
+
+[Here is a terrific walk through of how this all works](https://karpathy.github.io/2015/05/21/rnn-effectiveness/).
+
+**To run:**
+
+`python ./RNN/rnn.py`
+
+This will run a demo, trained on 'Portrait of Dorian Gray'. To supply your own, import the code like so:
+
+```
+from rnn import TextGenerator
+
+f = open('file', mode='r', encoding='utf-8')
+text = f.read()
+
+text_generator = TextGenerator(text)
+text_generator.train() # can take a few hours
+script = text_generator.generate_text(gen_length=5000)
+
+print(script)
+```
+
+Example of generated text:
+
+>" i am not laughing . " 
+
+> "i am quite sure that i was afraid. when i grew afraid and put his head, with a piteous expression of paradise 
+> and put up the scarlet dew that book the office of frescoes in the things that had been brought by 
+> vivisecting himself. human life--that ! the bible, and the secret of life is the key in the theatre...
+
+well... 
+
 <br />
 
 ## 3. Generating Fake People Photos with a Generative Adversarial Network
