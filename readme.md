@@ -103,8 +103,31 @@ well...
 
 <br />
 
-## 3. Generating Fake People Photos with a Generative Adversarial Network
+## 3. Generating Fake Handwritten Numbers with a Generative Adversarial Network
 ----
+
+GAN's are behind some of the fields most exciting yet (sometimes) creepy achievements. Namely, GAN's have been used to successfully create (deep) fakes, whether of images, video, sound and more. The way they work is pretty cool.
+
+In our example, we're going to look at generating life-like handwritten numbers. We have a dataset with 60,000 images of handwritten digits, that look somthing like this:
+
+![Example of handwritten digits](./GAN/example_handwritten.png)
+
+Instead of one network, we create two neural networks with opposing goals. 
+
+1. The "Generator" network will try to create brand new "fakes". In our example, the Generator will try to create an image that looks like a handwritten digit.
+
+2. The "Discriminator" network tries to decide whether an image is ral or fake. 
+
+We feed to stream into the discriminator - data with real handwritten numbers and images from the generator network. The discriminator is successful if it properly labels images from the real feed as real and images from the generator as fake.
+
+The generator has the exact opposite goal. It will generate new images and it is considered successful when one of its images is marked as "real" by the discriminator.
+
+The two networks battle it out until both are really, really good at what they do. By that time, we'll have one network that is very good at looking out for counterfeits, and another (perhaps equally as) good at creating them.
+
+After a few rounds of training:
+
+![](./GAN/example_handwritten_results.png)
+
 
 <br />
 
