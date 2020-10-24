@@ -27,7 +27,7 @@ This technique uses Haar cascades, which is a simple yet powerful algorithm that
 Make sure your argument is a string path to a valid image (png, jpg, jpeg or gif). 
 
 The function will open up your photo with bounding squares around likely faces:
-![Example of Face Detection](face_detection_example.png)
+![Example of Face Detection](./image_recognition/face_detection_example.png)
 
 <br />
 
